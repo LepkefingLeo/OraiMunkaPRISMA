@@ -14,3 +14,12 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Server {
+  id Int @id @default(autoincrement())
+  adminEmail String
+  ipAddress String @unique
+  installedAt DateTime
+  nickname String?
+  memory Int
+}
